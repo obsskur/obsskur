@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Game Portal</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <h1>🎮 Welcome to DarkArcade</h1>
+    <input type="text" id="search" placeholder="Search games...">
+  </header>
+
+  <main id="game-list">
+    <!-- Game cards go here -->
+    <div class="game-card">
+      <img src="games/slope/thumbnail.png" alt="Slope">
+      <a href="games/slope/index.html">Slope</a>
+    </div>
+
+    <div class="game-card">
+      <img src="games/run3/thumbnail.png" alt="Run 3">
+      <a href="games/run3/index.html">Run 3</a>
+    </div>
+
+    <!-- Add more games here -->
+  </main>
+
+  <footer>
+    <p>© 2025 DarkArcade | Built by You 😎</p>
+  </footer>
+
+  <script>
+    const searchInput = document.getElementById("search");
+    const cards = document.querySelectorAll(".game-card");
+
+    searchInput.addEventListener("input", () => {
+      const value = searchInput.value.toLowerCase();
+      cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        card.style.display = text.includes(value) ? "block" : "none";
+      });
+    });
+  </script>
+</body>
+</html>
